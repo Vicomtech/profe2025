@@ -12,7 +12,7 @@ User prompt:
 
 ```
 
-Dados los siguientes textos y preguntas, relacione cada pregunta con el texto más relevante y proporcione una respuesta concisa basada únicamente
+## Dados los siguientes textos y preguntas, relacione cada pregunta con el texto más relevante y proporcione una respuesta concisa basada únicamente
 en la información de los textos. Devuelva el resultado estrictamente como un objeto JSON en el formato
 
  {"1": "A",
@@ -22,7 +22,7 @@ en la información de los textos. Devuelva el resultado estrictamente como un ob
 donde las claves son los números de las preguntas y los valores son las respuestas correspondientes.
 No incluyas ninguna explicación ni texto adicional.\n\n {textos}\n{preguntas}
 
-
+```
 
 
 ## Metrics
