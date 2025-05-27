@@ -20,7 +20,7 @@ en la información de los textos. Devuelva el resultado estrictamente como un ob
    ...},
 
 donde las claves son los números de las preguntas y los valores son las respuestas correspondientes.
-No incluyas ninguna explicación ni texto adicional.\n\n {textos}\n{preguntas}"
+No incluyas ninguna explicación ni texto adicional.\n\n {textos}\n{preguntas}
 
 
 
