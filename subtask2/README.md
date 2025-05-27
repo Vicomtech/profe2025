@@ -12,8 +12,8 @@ User prompt:
 
 ```
 
-## Dados los siguientes textos y preguntas, relacione cada pregunta con el texto más relevante y proporcione una respuesta concisa basada únicamente
-en la información de los textos. Devuelva el resultado estrictamente como un objeto JSON en el formato
+Dados los siguientes textos y preguntas, relacione cada pregunta con el texto más relevante y proporcione una respuesta concisa basada 
+únicamente en la información de los textos. Devuelva el resultado estrictamente como un objeto JSON en el formato
 
  {"1": "A",
   "2": "B",
@@ -46,8 +46,8 @@ No incluyas ninguna explicación ni texto adicional.\n\n {textos}\n{preguntas}
 | Ensemble LLM     | Gemma3 + Phi4 + Qwen2.5          | 100,00%  | 89,47%   | 98,04%   | 85,11%   | 93,75%   | 81,25%   | 92,48%           |
 
 
-##Example
+## Example
 There are two different formats for these exercises: 
-- Example 1  where there are more questions than answers
+- Example 1  where there are more source texts than target texts
 
-- Example 2, where there are more answers than questions
+- Example 2, where there are more target texts than source texts
