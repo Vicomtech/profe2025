@@ -49,6 +49,6 @@ No incluyas ninguna explicación ni texto adicional.\n\n {textos}\n{preguntas}
 
 ## Example
 There are two different formats for these exercises: 
-- Example 1  where there are more source texts than target texts
+- [Example 1](./example1.json)  where there are more source texts than target texts
 
-- Example 2, where there are more target texts than source texts
+- [Example 2](./example2.json) where there are more target texts than source texts
