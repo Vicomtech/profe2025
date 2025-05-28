@@ -2,7 +2,8 @@
 
 - [Prompts](#prompts)
 - [Metrics](#metrics)
-- [Example](./example.json)
+- [Example](#example)
+
 
 ## Prompts
 
