@@ -1,11 +1,14 @@
-# profe2025
+# PROFE2025
 
-[https://sites.google.com/view/profe2025](https://sites.google.com/view/profe2025)
+This repository contains technical information related to the [PROFE2025](https://sites.google.com/view/profe2025) shared task.
 
-Divided sin subtasks:
-- [subtask1](./subtask1/)
-- [subtask2](./subtask2/)
-- [subtask3](./subtask3/)
+It includes data examples, prompts used for LLMs, and detailed evaluation metrics for each subtask.
+
+Subtasks:
+
+- [Subtask1 - Multiple Choice](./subtask1/)
+- [Subtask2 - Matching](./subtask2/)
+- [Subtask3 - Filling the gaps](./subtask3/)
 
 ## Citation
 

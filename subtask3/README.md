@@ -1,7 +1,8 @@
-# Subtask 3 - Prompts
+# Subtask 3
 
 - [Prompts](#prompts)
 - [Metrics](#metrics)
+- [Dataset distribution](#evaluation-dataset)
 - [Example](./example.json)
 
 ## Prompts
@@ -98,7 +99,7 @@ Puedes usarlo si lo consideras útil:
 
 #### Relevant context decision Agent
 
-System prompt: 
+System prompt:
 
 ```
 Your are a useful assistant that helps the user decice if a context is relevant to complete a fill in the gap exercise.
@@ -135,7 +136,7 @@ Is this context relevant to fill the gaps?
 
 #### Enough context decision Agent
 
-System prompt: 
+System prompt:
 
 ```
 Your are a useful assistant that helps the user decice if a context is enough to complete a fill in the gap exercise.
@@ -172,7 +173,7 @@ Is this context enough to fill the gaps?
 
 #### Predictor
 
-System prompt: 
+System prompt:
 
 ```
 Eres un experto en lengua castellana. 
@@ -217,35 +218,43 @@ Puedes usarlo si lo consideras útil:
 =============================
 ```
 
+## Evaluation dataset
+
+| Proficiency level   | B1 | B2 | C1 | C2 | C1/C2 | Total |
+|---------------------|----|----|----|----|-------|-------|
+| Number of exercises | 7  | 3  | 5  | 3  | 2     | 20    |
+
 ## Metrics
 
-| Strategy | Model | Acc - B1 | Acc - B2 | Acc - C1 | Acc - C2 | Acc - C1/C2 | Average Accuracy |
-|----------|-------|----------|----|----|----|-------|---------|
-| Baseline | ChatGPT | --- | --- | --- | --- | --- | 43.00% |
-| LLM Reasoning | o4-mini | 80.95% | 88.89% | 83.33% | 72.22% | 83.33% | 81.66% |
-| LLM Reasoning + RAG | o4-mini | 88.10% | 94.44% | 86.67% | 77.78% | 75.00% | 85.84% |
-| LLM Reasoning | gemini-2.5-pro-exp-03-25 | 100.00% | 88.89% | 90.00% | 100.00% | 100.00% | 95.83% |
-| LLM Reasoning + RAG | gemini-2.5-pro-exp-03-25 | 100.00% | 94.44% | 93.33% | 94.44% | 100.00% | 96.44% |
-| LLM Reasoning | gemini-2.0-flash-thinking-exp-01-21 | 85.71% | 94.44% | 70.00% | 61.11% | 91.67% | 80.00% |
-| LLM Reasoning + RAG | gemini-2.0-flash-thinking-exp-01-21 | 97.62% | 94.44% | 93.33% | 100.00% | 100.00% | 96.67% |
-| LLM reasoning + RAG advanced | gemini-2.0-flash-thinking-exp-01-21 | 92.86% | 94.44% | 90.00% | 100.00% | 100.00% | 94.17% |
-| LLM Reasoning | gemini-2.5-flash-preview-04-17 | 97.62% | 94.44% | 70.00% | 100.00% | 100.00% | 90.83% |
-| LLM Reasoning + RAG | gemini-2.5-flash-preview-04-17 | 97.62% | 94.44% | 93.33% | 100.00% | 100.00% | 96.67% |
-| LLM Reasoning | DeepSeek R1 | 92.86% | 100.00% | 86.67% | 66.67% | 83.33% | 87.50% |
-| LLM reasoning + RAG | DeepSeek R1 | 90.48% | 88.88% | 73.33% | 94.44% | 100.00% | 87.50% |
-| LLM | Mistral large | 90.48% | 88.89% | 60.00% | 72.22% | 83.33% | 79.17% |
-| LLM reasoning | Claude 3.7 Sonnet (Thinking) | 92.86% | 94.44% | 93.33% | 100.00% | 100.00% | 95.00% |
-| LLM reasoning + RAG | Claude 3.7 Sonnet (Thinking) | 92.86% | 94.44% | 96.67% | 100.00% | 100.00% | 95.83% |
-| LLM reasoning | QwQ-32B | 76.19% | 88.89% | 86.67% | 72.22% | 100.00% | 82.50% |
-| LLM reasoning + RAG | QwQ-32B | 88.10% | 88.89% | 83.33% | 94.44% | 40.00% | 83.17% |
-| LLM reasoning | Qwen3-32B | 80.95% | 94.44% | 76.67% | 89.89% | 75.00% | 82.50% |
-| LLM reasoning | Qwen3-30B-A3B | 80.95% | 83.33% | 68.00% | 77.78% | 75.00% | 77.00% |
-| LLM | Phi 4 14B | 64.29% | 72.22% | 46.67% | 43.33% | 58.33% | 57.33% |
-| LLM reasoning | DeepSeek R1 Distill Qwen 14B | 70.95% | 55.56% | 47.33% | 55.56% | 75.00% | 60.83% |
-| LLM reasoning + RAG | DeepSeek R1 Distill Qwen 14B | 76.19% | 77.78% | 60.67% | 66.67% | 33.33% | 66.83% |
-| LLM reasoning + RAG advanced | DeepSeek R1 Distill Qwen 14B | 50.00% | 83.33% | 43.33% | 44.44% | 58.33% | 53.33% |
-| LLM | Gemma 27B | 69.05% | 27.78% | 20.00% | 22.22% | 50.00% | 41.67% |
-| LLM | Llama 3.3 70B | 76.19% | 94.44% | 60.00% | 77.78% | 91.67% | 76.67% |
-| LLM + RAG | Llama 3.3 70B | 73.81% | 94.44% | 56.67% | 83.33% | 66.67% | 73.33% |
-| LLM ensamble (max voting) | Qwen3-32B + Phi-4 + DeepSeek R1 Distill Qwen 14B | 80.95% | 94.44% | 70.00% | 72.22% | 75.00% | 78.33% |
-| Embedding similarity | sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 | 43.00% | 28.00% | 10.00% | 22.22% | 50.00% | 30.05% |
+The evaluation metric used was accuracy (%).
+
+| Strategy                               | Model                                                       | B1      | B2      | C1     | C2      | C1/C2   | Overall    |
+|----------------------------------------|-------------------------------------------------------------|---------|---------|--------|---------|---------|------------|
+| Baseline                               | ChatGPT                                                     | ---     | ---     | ---    | ---     | ---     | 43.00%     |
+| ICL (zero-shot)                        | o4-mini                                                     | 80.95%  | 88.89%  | 83.33% | 72.22%  | 83.33%  | 81.66%     |
+| ICL (zero-shot) + RAG                  | o4-mini                                                     | 88.10%  | 94.44%  | 86.67% | 77.78%  | 75.00%  | 85.84%     |
+| ICL (zero-shot)                        | gemini-2.5-pro-exp-03-25                                    | 100.00% | 88.89%  | 90.00% | 100.00% | 100.00% | 95.83%     |
+| ICL (zero-shot) + RAG                  | gemini-2.5-pro-exp-03-25                                    | 100.00% | 94.44%  | 93.33% | 94.44%  | 100.00% | 96.44%     |
+| ICL (zero-shot)                        | gemini-2.0-flash-thinking-exp-01-21                         | 85.71%  | 94.44%  | 70.00% | 61.11%  | 91.67%  | 80.00%     |
+| ICL (zero-shot) + RAG                  | gemini-2.0-flash-thinking-exp-01-21                         | 97.62%  | 94.44%  | 93.33% | 100.00% | 100.00% | **96.67%** |
+| ICL (zero-shot) + Agentic RAG          | gemini-2.0-flash-thinking-exp-01-21                         | 92.86%  | 94.44%  | 90.00% | 100.00% | 100.00% | 94.17%     |
+| ICL (zero-shot)                        | gemini-2.5-flash-preview-04-17                              | 97.62%  | 94.44%  | 70.00% | 100.00% | 100.00% | 90.83%     |
+| ICL (zero-shot) + RAG                  | gemini-2.5-flash-preview-04-17                              | 97.62%  | 94.44%  | 93.33% | 100.00% | 100.00% | **96.67%** |
+| ICL (zero-shot)                        | DeepSeek R1                                                 | 92.86%  | 100.00% | 86.67% | 66.67%  | 83.33%  | 87.50%     |
+| ICL (zero-shot) + RAG                  | DeepSeek R1                                                 | 90.48%  | 88.88%  | 73.33% | 94.44%  | 100.00% | 87.50%     |
+| ICL (zero-shot)                        | Mistral large                                               | 90.48%  | 88.89%  | 60.00% | 72.22%  | 83.33%  | 79.17%     |
+| ICL (zero-shot)                        | Claude 3.7 Sonnet (Thinking)                                | 92.86%  | 94.44%  | 93.33% | 100.00% | 100.00% | 95.00%     |
+| ICL (zero-shot) + RAG                  | Claude 3.7 Sonnet (Thinking)                                | 92.86%  | 94.44%  | 96.67% | 100.00% | 100.00% | 95.83%     |
+| ICL (zero-shot)                        | QwQ-32B                                                     | 76.19%  | 88.89%  | 86.67% | 72.22%  | 100.00% | 82.50%     |
+| ICL (zero-shot) + RAG                  | QwQ-32B                                                     | 88.10%  | 88.89%  | 83.33% | 94.44%  | 40.00%  | 83.17%     |
+| ICL (zero-shot)                        | Qwen3-32B                                                   | 80.95%  | 94.44%  | 76.67% | 89.89%  | 75.00%  | 82.50%     |
+| ICL (zero-shot)                        | Qwen3-30B-A3B                                               | 80.95%  | 83.33%  | 68.00% | 77.78%  | 75.00%  | 77.00%     |
+| ICL (zero-shot)                        | Phi 4 14B                                                   | 64.29%  | 72.22%  | 46.67% | 43.33%  | 58.33%  | 57.33%     |
+| ICL (zero-shot)                        | DeepSeek R1 Distill Qwen 14B                                | 70.95%  | 55.56%  | 47.33% | 55.56%  | 75.00%  | 60.83%     |
+| ICL (zero-shot) + RAG                  | DeepSeek R1 Distill Qwen 14B                                | 76.19%  | 77.78%  | 60.67% | 66.67%  | 33.33%  | 66.83%     |
+| ICL (zero-shot) + Agentic RAG          | DeepSeek R1 Distill Qwen 14B                                | 50.00%  | 83.33%  | 43.33% | 44.44%  | 58.33%  | 53.33%     |
+| ICL (zero-shot)                        | Gemma 27B                                                   | 69.05%  | 27.78%  | 20.00% | 22.22%  | 50.00%  | 41.67%     |
+| ICL (zero-shot)                        | Llama 3.3 70B                                               | 76.19%  | 94.44%  | 60.00% | 77.78%  | 91.67%  | 76.67%     |
+| ICL (zero-shot) + RAG                  | Llama 3.3 70B                                               | 73.81%  | 94.44%  | 56.67% | 83.33%  | 66.67%  | 73.33%     |
+| Ensamble (max voting), ICL (zero-shot) | Qwen3-32B + Phi-4 + DeepSeek R1 Distill Qwen 14B            | 80.95%  | 94.44%  | 70.00% | 72.22%  | 75.00%  | 78.33%     |
+| Embedding similarity                   | sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 | 43.00%  | 28.00%  | 10.00% | 22.22%  | 50.00%  | 30.05%     |
